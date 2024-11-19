@@ -16,7 +16,7 @@ namespace Expense_Management
             // Kết nối với chuỗi SQL đã được chỉ định
             SqlConnection conn = new SqlConnection
             {
-                ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\C#\ExpenseManagementSQL\ExpenseManagement.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False"
+                ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\DA_TinHoc_Nhom8_QuanLyChiTieu\DA_TinHoc_Nhom8_QuanLyChiTieu\ExpenseManagementSQL\ExpenseManagement.mdf;Integrated Security=True;Connect Timeout=30"
             };
             return conn;
         }
