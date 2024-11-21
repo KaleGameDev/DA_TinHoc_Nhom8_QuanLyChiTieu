@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Expense_Management.Class;
 
 namespace Expense_Management.Form_Menu
 {
@@ -159,18 +160,6 @@ namespace Expense_Management.Form_Menu
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading categories: " + ex.Message);
-            }
-        }
-
-        // Lớp ListItem để hiển thị tên danh mục trong ListBox
-        public class ListItem
-        {
-            public int CategoryId { get; set; }
-            public string CategoryName { get; set; }
-
-            public override string ToString()
-            {
-                return CategoryName;
             }
         }
     }

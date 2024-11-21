@@ -193,5 +193,10 @@ namespace Expense_Management.Tools
         {
             LoadTransactions();
         }
+
+        private void lbNotePlan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
