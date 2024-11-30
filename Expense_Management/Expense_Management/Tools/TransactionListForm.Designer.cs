@@ -37,6 +37,7 @@
             this.btnReload = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnXoaPlan = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransactions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -164,11 +165,29 @@
             this.guna2PictureBox1.TabIndex = 2;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // btnXoaPlan
+            // 
+            this.btnXoaPlan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPlan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoaPlan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoaPlan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoaPlan.FillColor = System.Drawing.Color.Transparent;
+            this.btnXoaPlan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoaPlan.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPlan.Image = global::Expense_Management.Properties.Resources.icons8_trash_60;
+            this.btnXoaPlan.ImageSize = new System.Drawing.Size(60, 60);
+            this.btnXoaPlan.Location = new System.Drawing.Point(26, 304);
+            this.btnXoaPlan.Name = "btnXoaPlan";
+            this.btnXoaPlan.Size = new System.Drawing.Size(70, 70);
+            this.btnXoaPlan.TabIndex = 10;
+            this.btnXoaPlan.Click += new System.EventHandler(this.btnXoaPlan_Click);
+            // 
             // TransactionListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnXoaPlan);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.lbNotePlan);
             this.Controls.Add(this.guna2PictureBox2);
@@ -194,5 +213,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label lbNotePlan;
         private Guna.UI2.WinForms.Guna2CircleButton btnReload;
+        private Guna.UI2.WinForms.Guna2Button btnXoaPlan;
     }
 }

@@ -8,25 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Expense_Management.Form_Menu;
 
 namespace Expense_Management.Tools
 {
     public partial class TransactionListForm : Form
     {
-        public TransactionListForm()
-        {
-            InitializeComponent();
-        }
-
+        private Add_Plan_Menu addPlanForm;
         private Function fn = new Function(); // Đối tượng để kết nối CSDL
         private int planId;
 
-        public TransactionListForm(int planId)
+        public TransactionListForm(int planId, Add_Plan_Menu form)
         {
             InitializeComponent();
             this.planId = planId;
             LoadTransactions(); // Tải danh sách giao dịch khi form khởi động
             LoadPlanDescription(planId);
+            addPlanForm = form; // Gán tham chiếu của Add_Plan
         }
 
         public void LoadTransactions()
@@ -197,6 +195,77 @@ namespace Expense_Management.Tools
         private void lbNotePlan_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoaPlan_Click(object sender, EventArgs e)
+        {
+
+            // Hiển thị hộp thoại xác nhận
+            DialogResult dialogResult = MessageBox.Show(
+                "Bạn có chắc chắn muốn xóa kế hoạch này và toàn bộ giao dịch liên quan không?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    // Thực hiện xóa
+                    DeletePlanAndTransactions(planId);
+                    MessageBox.Show("Kế hoạch và các giao dịch liên quan đã được xóa thành công.", "Thông báo");
+
+                    // Cập nhật danh sách sau khi xóa
+                    addPlanForm.LoadPlans();
+
+                    // Đóng form sau khi xóa thành công
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa kế hoạch: " + ex.Message, "Lỗi");
+                }
+            }
+        }
+
+        private void DeletePlanAndTransactions(int planId)
+        {
+            string queryTransactions = "DELETE FROM [Transaction] WHERE PlanId = @planId";
+            string queryPlan = "DELETE FROM [Plan] WHERE PlanId = @planId";
+
+            using (SqlConnection conn = fn.getConnection())
+            {
+                conn.Open();
+                using (SqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Xóa các giao dịch liên quan
+                        using (SqlCommand cmdDeleteTransactions = new SqlCommand(queryTransactions, conn, transaction))
+                        {
+                            cmdDeleteTransactions.Parameters.AddWithValue("@planId", planId);
+                            cmdDeleteTransactions.ExecuteNonQuery();
+                        }
+
+                        // Xóa kế hoạch
+                        using (SqlCommand cmdDeletePlan = new SqlCommand(queryPlan, conn, transaction))
+                        {
+                            cmdDeletePlan.Parameters.AddWithValue("@planId", planId);
+                            cmdDeletePlan.ExecuteNonQuery();
+                        }
+
+                        // Commit transaction nếu xóa thành công
+                        transaction.Commit();
+                    }
+                    catch
+                    {
+                        // Rollback transaction nếu có lỗi
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
         }
     }
 }

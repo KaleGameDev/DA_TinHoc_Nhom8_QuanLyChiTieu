@@ -51,23 +51,37 @@ namespace Expense_Management.Form_Menu
             // Xử lý sự kiện DrawItem để tùy chỉnh việc vẽ các hàng
             listPlans.DrawItem += (s, e) =>
             {
+                // Kiểm tra chỉ mục hợp lệ
+                if (e.Index < 0 || e.Index >= listPlans.Items.Count)
+                {
+                    return;
+                }
+
                 e.DrawBackground();
 
-                // Tạo font với kích thước lớn hơn cho chữ trong dòng
                 using (Font font = new Font("Arial", 16, FontStyle.Regular))
                 {
-                    // Sử dụng StringFormat để căn giữa
-                    StringFormat sf = new StringFormat();
-                    sf.LineAlignment = StringAlignment.Center; // Căn giữa theo chiều dọc
+                    StringFormat sf = new StringFormat
+                    {
+                        LineAlignment = StringAlignment.Center // Căn giữa theo chiều dọc
+                    };
 
-                    // Vẽ chuỗi với font, màu và căn giữa
-                    e.Graphics.DrawString(listPlans.Items[e.Index].ToString(), font, Brushes.Black, e.Bounds, sf);
+                    // Kiểm tra nếu là mục giả
+                    if (listPlans.Items[e.Index].ToString() == "Không có kế hoạch nào.")
+                    {
+                        e.Graphics.DrawString(listPlans.Items[e.Index].ToString(), font, Brushes.Gray, e.Bounds, sf);
+                    }
+                    else
+                    {
+                        e.Graphics.DrawString(listPlans.Items[e.Index].ToString(), font, Brushes.Black, e.Bounds, sf);
+                    }
                 }
 
                 e.DrawFocusRectangle();
             };
+
         }
-        private void LoadPlans()
+        public void LoadPlans()
         {
             try
             {
@@ -137,7 +151,7 @@ namespace Expense_Management.Form_Menu
 
                             MessageBox.Show($"Tên kế hoạch: {planName}\nMô tả: {description}", "Chi tiết kế hoạch");
                             // Mở TransactionListForm với planId để hiển thị các giao dịch
-                            TransactionListForm transactionListForm = new TransactionListForm(planId);
+                            TransactionListForm transactionListForm = new TransactionListForm(planId, this);
                             transactionListForm.ShowDialog();
                         }
                         else
