@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|d:\\da_tinhoc_nhom8_quanlychitieu\\da_tinhoc_nhom8_quanlychitieu\\expense_management\\expense_management\\tools\\transactionlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|solutionrelative:expense_management\\tools\\transactionlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|d:\\da_tinhoc_nhom8_quanlychitieu\\da_tinhoc_nhom8_quanlychitieu\\expense_management\\expense_management\\tools\\transactionlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|solutionrelative:expense_management\\tools\\transactionlistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\expense_management\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FEF49125-5418-47ED-899E-5C6272C08D35}|Expense_Management\\Expense_Management.csproj|solutionrelative:expense_management\\function.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -22,46 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Function.cs",
               "DocumentMoniker": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Function.cs",
               "RelativeDocumentMoniker": "Expense_Management\\Function.cs",
               "ToolTip": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Function.cs",
               "RelativeToolTip": "Expense_Management\\Function.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-31T12:16:58.27Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TransactionListForm.cs",
-              "DocumentMoniker": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Tools\\TransactionListForm.cs",
-              "RelativeDocumentMoniker": "Expense_Management\\Tools\\TransactionListForm.cs",
-              "ToolTip": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Tools\\TransactionListForm.cs",
-              "RelativeToolTip": "Expense_Management\\Tools\\TransactionListForm.cs",
-              "ViewState": "AgIAAOYAAAAAAAAAAAAcwOcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T14:32:58.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransactionListForm.cs [Design]",
-              "DocumentMoniker": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Tools\\TransactionListForm.cs",
-              "RelativeDocumentMoniker": "Expense_Management\\Tools\\TransactionListForm.cs",
-              "ToolTip": "D:\\DA_TinHoc_Nhom8_QuanLyChiTieu\\DA_TinHoc_Nhom8_QuanLyChiTieu\\Expense_Management\\Expense_Management\\Tools\\TransactionListForm.cs [Design]",
-              "RelativeToolTip": "Expense_Management\\Tools\\TransactionListForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T14:32:56.928Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
